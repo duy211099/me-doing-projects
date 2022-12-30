@@ -17,6 +17,8 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
+    "zod": "^3.20.2",
     "zustand": "^4.1.5"
   },
   "devDependencies": {
