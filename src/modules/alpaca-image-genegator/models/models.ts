@@ -1,12 +1,12 @@
 export enum ECatalog {
-  Accessories = 'Accessories',
   Background = 'Background',
   Ears = 'Ears',
-  Eyes = 'Eyes',
   Hair = 'Hair',
+  Neck = 'Neck',
   Leg = 'Leg',
   Mouth = 'Mouth',
-  Neck = 'Neck',
+  Eyes = 'Eyes',
+  Accessories = 'Accessories',
 }
 
 export type Alpaca = {

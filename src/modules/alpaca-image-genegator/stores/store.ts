@@ -5,6 +5,7 @@ interface AlpacaState {
   alpaca: Alpaca
   selectedCatalog: ECatalog
   selectCatalog: (value: ECatalog) => void
+  setAlpacaAccessory: (index: number) => void
 }
 
 export const useAlpacaStore = create<AlpacaState>((set) => ({
@@ -20,4 +21,12 @@ export const useAlpacaStore = create<AlpacaState>((set) => ({
   },
   selectedCatalog: ECatalog.Accessories,
   selectCatalog: (value: ECatalog) => set({ selectedCatalog: value }),
+  setAlpacaAccessory: (index: number) => {
+    set((state) => {
+      const result = state.alpaca
+      result[state.selectedCatalog] = index
+
+      return { ...state, alpaca: result }
+    })
+  },
 }))

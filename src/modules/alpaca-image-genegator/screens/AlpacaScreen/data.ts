@@ -1,4 +1,6 @@
-import { ECatalog, Asset } from "../../models/models";
+import { ECatalog, Asset } from '../../models/models'
+
+// TODO fix some path not working
 
 export const AssetData: Asset = {
   [ECatalog.Accessories]: [
@@ -73,10 +75,100 @@ export const AssetData: Asset = {
       path: 'assets/alpaca/eyes/star.png',
     },
   ],
-  [ECatalog.Hair]: [],
-  [ECatalog.Leg]: [],
-  [ECatalog.Mouth]: [],
-  [ECatalog.Neck]: [],
+  [ECatalog.Hair]: [
+    {
+      name: 'Bang',
+      path: 'assets/alpaca/hair/bang.png',
+    },
+    {
+      name: 'Curls',
+      path: 'assets/alpaca/hair/curls.png',
+    },
+    {
+      name: 'Default',
+      path: 'assets/alpaca/hair/default.png',
+    },
+    {
+      name: 'Elegant',
+      path: 'assets/alpaca/hair/elegant.png',
+    },
+    {
+      name: 'Fancy',
+      path: 'assets/alpaca/hair/fancy.png',
+    },
+    {
+      name: 'Quiff',
+      path: 'assets/alpaca/hair/quiff.png',
+    },
+    {
+      name: 'Short',
+      path: 'assets/alpaca/hair/short.png',
+    },
+  ],
+  [ECatalog.Leg]: [
+    {
+      name: 'Bubble Tea',
+      path: 'assets/alpaca/leg/bubble-tea.png',
+    },
+    {
+      name: 'Cookie',
+      path: 'assets/alpaca/leg/cookie.png',
+    },
+    {
+      name: 'Default',
+      path: 'assets/alpaca/leg/default.png',
+    },
+    {
+      name: 'Game Console',
+      path: 'assets/alpaca/leg/game-console.png',
+    },
+    {
+      name: 'Tilt Backward',
+      path: 'assets/alpaca/leg/tilt-backward.png',
+    },
+    {
+      name: 'Titl Forward',
+      path: 'assets/alpaca/leg/tilt-forward.png',
+    },
+  ],
+  [ECatalog.Mouth]: [
+    {
+      name: 'Astonished',
+      path: 'assets/alpaca/mouth/astonished.png',
+    },
+    {
+      name: 'Default',
+      path: 'assets/alpaca/mouth/default.png',
+    },
+    {
+      name: 'Eating',
+      path: 'assets/alpaca/mouth/eating.png',
+    },
+    {
+      name: 'Laught',
+      path: 'assets/alpaca/mouth/laugh.png',
+    },
+    {
+      name: 'Tounge',
+      path: 'assets/alpaca/mouth/toungue.png',
+    },
+  ],
+  [ECatalog.Neck]: [
+    {
+      name: 'Bend Backward',
+      path: 'assets/alpaca/neck/bend-backward.png',
+    },
+    {
+      name: 'Bend Forward',
+      path: 'assets/alpaca/neck/bend-forward.png',
+    },
+    {
+      name: 'Default',
+      path: 'assets/alpaca/neck/default.png',
+    },
+    {
+      name: 'Thick',
+      path: 'assets/alpaca/neck/thick.png',
+    },
+  ],
 }
-export { ECatalog };
-
