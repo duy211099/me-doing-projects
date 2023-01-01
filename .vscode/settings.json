@@ -7,5 +7,16 @@
             ".tsx"
         ]
     },
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
