@@ -11,8 +11,8 @@ export const AlpacaScreen = () => {
                 <aside className="basis-5/12">
                     <AlpacaImage />
                 </aside>
-                <aside className="basis-7/12 flex flex-col justify-center items-center">
-                    <div className="w-2/3">
+                <aside className="basis-7/12 flex flex-col items-center">
+                    <div className="px-12">
                         <AlpacaAccessory />
                         <AlpacaStyle />
                     </div>
