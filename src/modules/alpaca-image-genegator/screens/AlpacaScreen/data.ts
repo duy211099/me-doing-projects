@@ -1,7 +1,5 @@
 import { ECatalog, Asset } from '../../models/models'
 
-// TODO fix some path not working
-
 export const AssetData: Asset = {
   [ECatalog.Accessories]: [
     {
@@ -28,11 +26,71 @@ export const AssetData: Asset = {
     },
     {
       name: 'Blue 60',
-      path: 'assets/alpaca/backgrounds/blue50.png',
+      path: 'assets/alpaca/backgrounds/blue60.png',
     },
     {
       name: 'Blue 70',
-      path: 'assets/alpaca/backgrounds/blue50.png',
+      path: 'assets/alpaca/backgrounds/blue70.png',
+    },
+    {
+      name: 'Dark Blue 30',
+      path: 'assets/alpaca/backgrounds/darkblue30.png',
+    },
+    {
+      name: 'Dark Blue 50',
+      path: 'assets/alpaca/backgrounds/darkblue50.png',
+    },
+    {
+      name: 'Dark Blue 70',
+      path: 'assets/alpaca/backgrounds/darkblue70.png',
+    },
+    {
+      name: 'Green 50',
+      path: 'assets/alpaca/backgrounds/green50.png',
+    },
+    {
+      name: 'Green 60',
+      path: 'assets/alpaca/backgrounds/green60.png',
+    },
+    {
+      name: 'Green 70',
+      path: 'assets/alpaca/backgrounds/green70.png',
+    },
+    {
+      name: 'Grey 40',
+      path: 'assets/alpaca/backgrounds/grey40.png',
+    },
+    {
+      name: 'Grey 70',
+      path: 'assets/alpaca/backgrounds/grey70.png',
+    },
+    {
+      name: 'Grey 80',
+      path: 'assets/alpaca/backgrounds/grey80.png',
+    },
+    {
+      name: 'Red 50',
+      path: 'assets/alpaca/backgrounds/red50.png',
+    },
+    {
+      name: 'Red 60',
+      path: 'assets/alpaca/backgrounds/red60.png',
+    },
+    {
+      name: 'Red 70',
+      path: 'assets/alpaca/backgrounds/red70.png',
+    },
+    {
+      name: 'Yellow 50',
+      path: 'assets/alpaca/backgrounds/yellow50.png',
+    },
+    {
+      name: 'Yellow 60',
+      path: 'assets/alpaca/backgrounds/yellow60.png',
+    },
+    {
+      name: 'Yellow 70',
+      path: 'assets/alpaca/backgrounds/yellow70.png',
     },
   ],
   [ECatalog.Ears]: [
@@ -150,7 +208,7 @@ export const AssetData: Asset = {
     },
     {
       name: 'Tounge',
-      path: 'assets/alpaca/mouth/toungue.png',
+      path: 'assets/alpaca/mouth/tongue.png',
     },
   ],
   [ECatalog.Neck]: [

@@ -9,6 +9,8 @@ export enum ECatalog {
   Accessories = 'Accessories',
 }
 
+export const Catalogs = Object.values(ECatalog)
+
 export type Alpaca = {
   [key in ECatalog]: number
 }
