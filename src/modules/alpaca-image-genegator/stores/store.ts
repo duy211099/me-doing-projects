@@ -1,3 +1,4 @@
+import { createRef } from 'react'
 import create from 'zustand'
 import { Alpaca, ECatalog } from '../models/models'
 import { AssetData } from '../screens/AlpacaScreen/data'
@@ -5,6 +6,7 @@ import { AssetData } from '../screens/AlpacaScreen/data'
 interface AlpacaState {
     alpaca: Alpaca
     selectedCatalog: ECatalog
+    exportRef: React.RefObject<HTMLDivElement>
     selectCatalog: (value: ECatalog) => void
     setAlpacaAccessory: (index: number) => void
     randomAlpacaAccessory: () => void
@@ -22,6 +24,7 @@ export const useAlpacaStore = create<AlpacaState>((set) => ({
         Neck: 0,
     },
     selectedCatalog: ECatalog.Accessories,
+    exportRef: createRef<HTMLDivElement>(),
     selectCatalog: (value: ECatalog) => set({ selectedCatalog: value }),
     setAlpacaAccessory: (index: number) => {
         set((state) => {

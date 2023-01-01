@@ -1,15 +1,31 @@
 import { AspectRatio, Button } from '@mantine/core'
 import classNames from 'classnames'
+import html2canvas from 'html2canvas'
 import { Catalogs, ECatalog } from '../../../models/models'
 import { useAlpacaStore } from '../../../stores/store'
 import { AssetData } from '../data'
 
 export const AlpacaImage = () => {
-    const { alpaca, randomAlpacaAccessory } = useAlpacaStore((state) => state)
+    const { alpaca, randomAlpacaAccessory, exportRef } = useAlpacaStore((state) => state)
+
+    const saveImage = async () => {
+        if (!exportRef?.current) return
+
+        const canvas = await html2canvas(exportRef?.current)
+        const data = canvas.toDataURL('image/jpg')
+        const link = document.createElement('a')
+
+        link.href = data
+        link.download = `alpaca_${new Date().toLocaleDateString()}`
+
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+    }
 
     return (
         <>
-            <AspectRatio ratio={1} className="pointer-events-none select-none">
+            <AspectRatio ref={exportRef} ratio={1} className="pointer-events-none select-none">
                 <img className="z-10" key={'nose'} alt={'nose'} src={'assets/alpaca/nose.png'} />
                 {Catalogs.map((catalog) => {
                     const index = alpaca[catalog]
@@ -30,7 +46,7 @@ export const AlpacaImage = () => {
             </AspectRatio>
             <div className="flex gap-2 py-4">
                 <Button onClick={() => randomAlpacaAccessory()}>Random</Button>
-                <Button>Download</Button>
+                <Button onClick={async () => await saveImage()}>Download</Button>
             </div>
         </>
     )
