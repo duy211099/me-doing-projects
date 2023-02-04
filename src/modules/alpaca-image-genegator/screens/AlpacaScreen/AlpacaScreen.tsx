@@ -2,7 +2,7 @@ import { Title } from '@mantine/core'
 import { AlpacaAccessory, AlpacaImage, AlpacaStyle } from './components'
 
 export const AlpacaScreen = () => {
-    return (
+  return (
         <div className="p-8">
             <Title className="py-4" order={1}>
                 Alpaca Generator
