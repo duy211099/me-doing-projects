@@ -1,7 +1,7 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import { AlpacaScreen } from './modules/alpaca-image-genegator/screens'
-import Demo from './modules/alpaca-image-genegator/screens/DemoOpenApi/Demo'
+import Demo from './modules/open-ai/screens/DemoOpenApi/Demo'
 
 const router = createBrowserRouter([
     {

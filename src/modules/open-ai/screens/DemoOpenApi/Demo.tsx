@@ -1,20 +1,23 @@
-import { Box, Button, Center, Group, Input, NumberInput, Paper, TextInput, Text, Anchor, Textarea } from '@mantine/core'
-import React, { useState } from 'react'
+import { Box, Button, Center, Paper, TextInput, Text, Anchor, Textarea } from '@mantine/core'
+import { useEffect, useState } from 'react'
+import { EInputField } from '../../models/models'
+import { useOpenAiStore } from '../../store/store'
 
 function Demo() {
-    const [input, setInput] = useState('')
-    const [apiKey, setApiKey] = useState('')
+    const { form, setForm, getModels } = useOpenAiStore((state) => state)
+    const { apiKey, prompt } = form
+
     const [response, setResponse] = useState('')
 
-    const handleChange = (event) => {
-        setInput(event.target.value)
-    }
+    useEffect(() => {
+        getModels()
+    }, [])
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const endpoint = `https://api.openai.com/v1/engines/text-davinci-002/completions`
+        const endpoint = `https://api.openai.com/v1/engines/text-davinci-003/completions`
         const query = {
-            prompt: input,
+            prompt: prompt,
             max_tokens: 100,
             n: 1,
             stop: '',
@@ -34,7 +37,7 @@ function Demo() {
 
     return (
         <Center>
-            <Box sx={{ minWidth: 600 }}>
+            <Box m={'sm'} sx={{ minWidth: 600 }}>
                 <Anchor href="https://platform.openai.com/account/api-keys" target="_blank">
                     Get API Token
                 </Anchor>
@@ -44,19 +47,25 @@ function Demo() {
                         value={apiKey}
                         label="API Token"
                         onChange={(event) => {
-                            setApiKey(event.target.value)
+                            setForm(EInputField.ApiKey, event.target.value)
                         }}
                     />
-                    <Textarea withAsterisk value={input} label="Prompt" onChange={handleChange} mt="sm" autosize/>
+                    <Textarea
+                        withAsterisk
+                        value={prompt}
+                        label="Prompt"
+                        onChange={(event) => setForm(EInputField.Prompt, event.target.value)}
+                        mt="sm"
+                        autosize
+                    />
                     <Button mt="sm" type="submit">
                         Submit
                     </Button>
                 </form>
                 <p>Response: </p>
                 <Paper shadow="xs" p="md">
-                    <Text className="whitespace-pre">{response}</Text>
+                    <Text>{response}</Text>
                 </Paper>
-                <div></div>
             </Box>
         </Center>
     )
