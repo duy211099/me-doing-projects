@@ -119,7 +119,7 @@ export const useOpenAiStore = create<OpenAiState>((set, get) => ({
     },
     models: null,
     getModels: async () => {
-        const configuration = new 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({
+        const configuration = new Configuration({
             apiKey: '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',
         })
         const openai = new OpenAIApi(configuration)
