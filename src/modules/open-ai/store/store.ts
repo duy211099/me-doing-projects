@@ -40,7 +40,7 @@ export const useOpenAiStore = create<OpenAiState>((set, get) => ({
     getCompletion: async () => {
         console.log('duy get().form.apiKey', get().form.apiKey)
         const configuration = new Configuration({
-            apiKey: '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',
+            apiKey: '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',
             // apiKey: get().form.apiKey,
             organization: 'org-nIzCKuSo4jE6uGdOnRFG0Sws',
         })
@@ -62,7 +62,7 @@ export const useOpenAiStore = create<OpenAiState>((set, get) => ({
     },
     getEmbedding: async () => {
         const configuration = new Configuration({
-            apiKey: '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',
+            apiKey: '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',
             organization: 'org-nIzCKuSo4jE6uGdOnRFG0Sws',
         })
         const openai = new OpenAIApi(configuration)
@@ -120,7 +120,7 @@ export const useOpenAiStore = create<OpenAiState>((set, get) => ({
     models: null,
     getModels: async () => {
         const configuration = new Configuration({
-            apiKey: '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',
+            apiKey: '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',
         })
         const openai = new OpenAIApi(configuration)
         const models = (await openai.listModels()).data
